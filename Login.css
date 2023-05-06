@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form_Container
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.Form_Box
+{
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    width: 350px;
+    padding: 50px 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.Form_Box h2
+{
+    font-size: 2em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.Form_Box .Field
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+}
+
+.Form_Box .Field.Active
+{
+    border-bottom: 2px solid #0065ff;
+    transition: .3s ease ;
+}
+
+.Form_Box .Field input
+{
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.Form_Box .Field i
+{
+    color: #828da0;
+    font-size: 1.3em;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+.Form_Box .Field.Active i
+{
+    color: #0065ff;
+    transition: .3s ease;
+}
+
+::placeholder
+{
+    color: #828da0;
+    font-size: 0.85em;
+}
+
+.Eye-Btn
+{
+    cursor: pointer;
+}
+
+.Eye-Btn i:hover
+{
+    color: #0065ff;
+    transition: .3s ease;
+}
+
+.Forget-Link
+{
+    text-align: right;
+    transform: translateY(-10px);
+}
+
+.Forget-Link a
+{
+    color: #0065ff;
+    font-size: 0.8em;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.Submit-Btn
+{
+    background: #0065ff;
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.Login-Options
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Login-Options .Text
+{
+    color: #828da0;
+    font-size: .65em;
+    margin: 25px 0;
+}
+
+.Other-Logins
+{
+    display: flex;
+}
+
+.Other-Logins a
+{
+    border: 1px solid #ccc;
+    padding: 11px 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    transition: border .3s ease;
+}
+
+.Other-Logins a:hover
+{
+    border: 1px solid #0065ff;
+}
+
+.Other-Logins a img
+{
+    width: 20px;
+}
+
+.Image-Box img
+{
+     max-width: 270px;
+}
+
+.Sliding-Link
+{
+    display: flex;
+    font-size: .8em;
+    margin-bottom: 25px;
+}
+
+.Sliding-Link span
+{
+    color: #0065ff;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.Image-Box
+{
+    z-index: 888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    height: 400px;
+    padding: 15px 35px;
+}
+
+.Sing-in-img-Box
+{
+    border-radius: 0 5px 5px 0;
+}
+
+.Sing-up-img-Box
+{
+    border-radius: 5px 0 0 5px;
+}
+
+.Sing-in-Form.Hide .Sing-in-Box
+{
+    transform: translateX(100%);
+    visibility: hidden;
+}
+
+.Sing-in-Form.Hide .Sing-in-img-Box
+{
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+
+.Sing-up-Form .Sing-up-img-Box
+{
+    transform: translateX(100%);
+    visibility: hidden;
+}
+
+.Sing-up-Form .Sing-up-Box
+{
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+
+.Sing-up-Form.Show .Sing-up-img-Box, .Sing-up-Form.Show .Sing-up-Box
+{
+    transform: translateX(0);
+    visibility: visible;
+    transition: .5s ease;
+}
+
+.Sing-in-Form.Show .Sing-in-Box, .Sing-in-Form.Show .Sing-in-img-Box
+{
+    transform: translateX(0);
+    visibility: visible;
+    transition: .5s ease;
+}
+
+
+
+@media screen and (max-width: 735px) 
+{
+    .Form_Container
+    {
+        flex-direction: column;
+        top: 0;
+        overflow: hidden;
+        padding: 30px;
+    }    
+
+    .Form_Box
+    {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .Image-Box img
+    {
+        max-width: 45%;
+        min-width: 180px;
+    }
+
+    .Image-Box
+    {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+        padding: 35px 35px 15px;
+    }
+
+    .Sing-up-Form
+    {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 450px) 
+{
+    .Form_Container
+    {
+        font-size: .9rem;
+    }
+
+    .Form_Box
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 325px) 
+{
+    .Other-Logins a
+    {
+        padding: 9px 25px;
+        margin: 0 3px;
+    }
+}

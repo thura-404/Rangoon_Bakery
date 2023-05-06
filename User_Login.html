@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="Login.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+
+
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="Form_Container Sing-in-Form">
+            <div class="Form_Box Sing-in-Box">
+                <h2>Login</h2>
+
+                <form action="User_Login.php">
+                    <div class="Field">
+                        <i class="uil uil-at"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="Field">
+                        <i class="uil uil-lock-alt"></i>
+                        <input class="Password-input" type="password" placeholder="Password" required>
+                        <div class="Eye-Btn">
+                            <i class="uil uil-eye-slash"></i>
+                        </div>
+                    </div>
+
+                    <div class="Forget-Link">
+                        <a href="#">Forget password?</a>
+                    </div>
+
+                    <input class="Submit-Btn" type="submit" value="Login" >
+                </form>
+
+                <div class="Login-Options">
+                    <p class="Text">Or, Login with.....</p>
+
+                    <div class="Other-Logins">
+                        <a href="#"><img src="LoginPhoto/google.png" alt=""></a>
+                        <a href="#"><img src="LoginPhoto/facebook.png" alt=""></a>
+                        <a href="#"><img src="LoginPhoto/apple.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Image-Box Sing-in-img-Box">
+                <div class="Sliding-Link">
+                    <p>Don't have an accont?</p>
+                    <span class="Sing-up-Btn">Sing up</span>
+                </div>
+
+                <img src="LoginPhoto/signin-img.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="Form_Container Sing-up-Form">
+            <div class="Image-Box Sing-up-img-Box">
+                <div class="Sliding-Link">
+                    <p>ALready a user?</p>
+                    <span class="Sing-in-Btn">Sing in</span>
+                </div>
+
+                <img src="LoginPhoto/signup-img.png" alt="">
+            </div>
+
+            <div class="Form_Box Sing-up-Box">
+                <h2>Sing up</h2>
+
+                <div class="Login-Options">
+                    <div class="Other-Logins">
+                        <a href="#"><img src="LoginPhoto/google.png" alt=""></a>
+                        <a href="#"><img src="LoginPhoto/facebook.png" alt=""></a>
+                        <a href="#"><img src="LoginPhoto/apple.png" alt=""></a>
+                    </div>
+
+                    <p class="Text">Or, Sing up with Email .....</p>
+                </div>
+
+                <form action="User_Login.php">
+                    <div class="Field">
+                        <i class="uil uil-user"></i>
+                        <input type="Text" placeholder="Name" required>
+                    </div>
+
+                    <div class="Field">
+                        <i class="uil uil-at"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="Field">
+                        <i class="uil uil-lock-alt"></i>
+                        <input  type="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="Field">
+                        <i class="uil uil-lock-access"></i>
+                        <input  type="password" placeholder="Confirm Password" required>
+                    </div>
+
+                    <input class="Submit-Btn" type="submit" value="Sing up" >
+                </form>
+            </div>
+        </div>
+        
+        
+        <script>
+            const Text_Input = document.querySelectorAll("input");
+            Text_Input.forEach(Text_Input => {
+                Text_Input.addEventListener("focus", () => {
+                    let Parent = Text_Input.parentNode;
+                    Parent.classList.add("Active");
+                });
+
+                Text_Input.addEventListener("blur", () => {
+                    let Parent = Text_Input.parentNode;
+                    Parent.classList.remove("Active");
+                });
+            });
+
+            const Password_Input = document.querySelector(".Password-input");
+            const Eye_Btn = document.querySelector(".Eye-Btn");
+
+            Eye_Btn.addEventListener("click", () => {
+                if(Password_Input.type ==  "password")
+                {
+                    Password_Input.type = "text";
+                    Eye_Btn.innerHTML = "<i class='uil uil-eye'></i>"
+                }
+                else
+                {
+                    Password_Input.type = "password";
+                    Eye_Btn.innerHTML = "<i class='uil uil-eye-slash'></i>"
+                }
+            });
+
+            const Sing_up_Btn = document.querySelector(".Sing-up-Btn");
+            const Sing_in_Btn = document.querySelector(".Sing-in-Btn");
+            const Sing_up_From = document.querySelector(".Sing-up-Form");
+            const Sing_in_From = document.querySelector(".Sing-in-Form");
+
+            Sing_up_Btn.addEventListener("click", () => {
+                Sing_in_From.classList.add("Hide");
+                Sing_up_From.classList.add("Show");
+                Sing_in_From.classList.remove("Show");
+            });
+
+            Sing_in_Btn.addEventListener("click", () => {
+                Sing_in_From.classList.remove("Hide");
+                Sing_up_From.classList.remove("Show");
+                Sing_in_From.classList.add("Show");
+            });
+        </script>
+    </body>
+</html>
